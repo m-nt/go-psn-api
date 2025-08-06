@@ -1,3 +1,3 @@
 module github.com/m-nt/go-psn-api
 
-go 1.15
+go 1.24
