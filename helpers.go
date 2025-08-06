@@ -1,4 +1,4 @@
-package psn
+package psn_module
 
 func isContain(arr []string, value string) bool {
 	for _, elem := range arr {

@@ -1,4 +1,4 @@
-package psn
+package psn_module
 
 var languages = []string{
 	"ja",

@@ -1,4 +1,4 @@
-package psn
+package psn_module
 
 // known Sony regions
 var regions = []string{

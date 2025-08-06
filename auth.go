@@ -1,4 +1,4 @@
-package psn
+package psn_module
 
 import (
 	"context"
