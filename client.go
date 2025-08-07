@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-type psn struct {
+type Psn struct {
 	http           *http.Client
 	lang           string
 	region         string
@@ -17,14 +17,14 @@ type psn struct {
 }
 
 // Creates new psn api
-func NewPsnApi(lang, region string) (*psn, error) {
+func NewPsnApi(lang, region string) (*Psn, error) {
 	if !isContain(languages, lang) {
 		return nil, fmt.Errorf("can't create psnapi: unsupported lang %s", lang)
 	}
 	if !isContain(regions, region) {
 		return nil, fmt.Errorf("can't create psnapi: unsupported region %s", region)
 	}
-	return &psn{
+	return &Psn{
 		http:   &http.Client{},
 		lang:   lang,
 		region: region,
@@ -32,7 +32,7 @@ func NewPsnApi(lang, region string) (*psn, error) {
 }
 
 // Setter for lang
-func (p *psn) SetLang(lang string) error {
+func (p *Psn) SetLang(lang string) error {
 	if !isContain(languages, lang) {
 		return fmt.Errorf("unsupported lang %s", lang)
 	}
@@ -41,12 +41,12 @@ func (p *psn) SetLang(lang string) error {
 }
 
 // Getter for lang
-func (p *psn) GetLang() string {
+func (p *Psn) GetLang() string {
 	return p.lang
 }
 
 // Setter for region
-func (p *psn) SetRegion(region string) error {
+func (p *Psn) SetRegion(region string) error {
 	if !isContain(regions, region) {
 		return fmt.Errorf("cunsupported region %s", region)
 	}
@@ -55,12 +55,12 @@ func (p *psn) SetRegion(region string) error {
 }
 
 // Getter for region
-func (p *psn) GetRegion() string {
+func (p *Psn) GetRegion() string {
 	return p.region
 }
 
 // Setter for npsso
-func (p *psn) SetNPSSO(npsso string) error {
+func (p *Psn) SetNPSSO(npsso string) error {
 	if npsso == "" {
 		return fmt.Errorf("npsso is empty")
 	}
@@ -69,12 +69,12 @@ func (p *psn) SetNPSSO(npsso string) error {
 }
 
 // Getter for npsso
-func (p *psn) GetNPSSO() string {
+func (p *Psn) GetNPSSO() string {
 	return p.npsso
 }
 
 // Setter for access token
-func (p *psn) SetAccessToken(accessToken string) error {
+func (p *Psn) SetAccessToken(accessToken string) error {
 	if accessToken == "" {
 		return fmt.Errorf("access token is empty")
 	}
@@ -83,12 +83,12 @@ func (p *psn) SetAccessToken(accessToken string) error {
 }
 
 // Getter for access token
-func (p *psn) GetAccessToken() (string, int32) {
+func (p *Psn) GetAccessToken() (string, int32) {
 	return p.accessToken, p.accessExpired
 }
 
 // Getter for refresh token
-func (p *psn) SetRefreshToken(refreshToken string) error {
+func (p *Psn) SetRefreshToken(refreshToken string) error {
 	if refreshToken == "" {
 		return fmt.Errorf("refresh token is empty")
 	}
@@ -97,6 +97,6 @@ func (p *psn) SetRefreshToken(refreshToken string) error {
 }
 
 //  Getter for refresh token
-func (p *psn) GetRefreshToken() (string, int32) {
+func (p *Psn) GetRefreshToken() (string, int32) {
 	return p.refreshToken, p.refreshExpired
 }

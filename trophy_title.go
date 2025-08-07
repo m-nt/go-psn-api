@@ -53,7 +53,7 @@ type TrophyTitleResponse struct {
 }
 
 // Method retrieves user's trophy titles
-func (p *psn) GetTrophyTitles(ctx context.Context, username string, limit, offset int32) (*TrophyTitleResponse, error) {
+func (p *Psn) GetTrophyTitles(ctx context.Context, username string, limit, offset int32) (*TrophyTitleResponse, error) {
 	var h = headers{}
 	h["authorization"] = fmt.Sprintf("Bearer %s", p.accessToken)
 	h["Accept"] = "*/*"

@@ -46,7 +46,7 @@ type TrophyGroupResponse struct {
 }
 
 // Method retrieves user's trophy groups
-func (p *psn) GetTrophyGroups(ctx context.Context, trophyTitleId, username string) (*TrophyGroupResponse, error) {
+func (p *Psn) GetTrophyGroups(ctx context.Context, trophyTitleId, username string) (*TrophyGroupResponse, error) {
 	var h = headers{}
 	h["authorization"] = fmt.Sprintf("Bearer %s", p.accessToken)
 	h["Accept"] = "*/*"

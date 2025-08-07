@@ -11,7 +11,7 @@ import (
 
 type headers map[string]string
 
-func (p *psn) post(ctx context.Context, formData url.Values, url string, headers headers, value interface{}) error {
+func (p *Psn) post(ctx context.Context, formData url.Values, url string, headers headers, value interface{}) error {
 	req, err := http.NewRequestWithContext(
 		ctx,
 		"POST",
@@ -47,7 +47,7 @@ func (p *psn) post(ctx context.Context, formData url.Values, url string, headers
 	return nil
 }
 
-func (p *psn) get(ctx context.Context, url string, headers headers, value interface{}) error {
+func (p *Psn) get(ctx context.Context, url string, headers headers, value interface{}) error {
 	req, err := http.NewRequestWithContext(
 		ctx,
 		"GET",

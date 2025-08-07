@@ -57,7 +57,7 @@ type ProfileResponse struct {
 }
 
 // Method retrieves user profile info by PSN id
-func (p *psn) GetProfileRequest(ctx context.Context, name string) (profile *Profile, err error) {
+func (p *Psn) GetProfileRequest(ctx context.Context, name string) (profile *Profile, err error) {
 	var h = headers{}
 	h["authorization"] = fmt.Sprintf("Bearer %s", p.accessToken)
 

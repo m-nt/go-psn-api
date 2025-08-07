@@ -26,7 +26,7 @@ type TrophiesResponse struct {
 }
 
 // Method retrieves user's trophies
-func (p *psn) GetTrophies(ctx context.Context, trophyTitleId, trophyGroupId, username string) (*TrophiesResponse, error) {
+func (p *Psn) GetTrophies(ctx context.Context, trophyTitleId, trophyGroupId, username string) (*TrophiesResponse, error) {
 	var h = headers{}
 	h["authorization"] = fmt.Sprintf("Bearer %s", p.accessToken)
 	h["Accept"] = "*/*"

@@ -19,7 +19,7 @@ type tokens struct {
 }
 
 // Method makes auth request to Sony's server and retrieves tokens
-func (p *psn) AuthWithNPSSO(ctx context.Context, npsso string) error {
+func (p *Psn) AuthWithNPSSO(ctx context.Context, npsso string) error {
 	if npsso == "" {
 		return fmt.Errorf("npsso is empty")
 	}
@@ -35,7 +35,7 @@ func (p *psn) AuthWithNPSSO(ctx context.Context, npsso string) error {
 }
 
 // Method makes auth request to Sony's server and retrieves tokens
-func (p *psn) AuthWithRefreshToken(ctx context.Context, refreshToken string) error {
+func (p *Psn) AuthWithRefreshToken(ctx context.Context, refreshToken string) error {
 	if refreshToken == "" {
 		return fmt.Errorf("refresh token is empty")
 	}
@@ -63,7 +63,7 @@ func (p *psn) AuthWithRefreshToken(ctx context.Context, refreshToken string) err
 	return nil
 }
 
-func (p *psn) authRequest(ctx context.Context, npsso string) (*tokens, error) {
+func (p *Psn) authRequest(ctx context.Context, npsso string) (*tokens, error) {
 	getValues := url.Values{}
 	getValues.Add("access_type", "offline")
 	getValues.Add("app_context", "inapp_ios")
